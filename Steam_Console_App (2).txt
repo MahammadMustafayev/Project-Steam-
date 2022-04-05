@@ -1,0 +1,90 @@
+Project Steam
+Və hər bir çıxacağ exception üçün custom exception yaradın !
+Game:
+GameName-Oyunun adı
+Publisher-Oyunun yaradıcı şirkəti
+Price-Oyunun qiyməti
+GameRelaseDate-Oyunun çıxış tarixi
+İsMultiplayer- Oyunun Multiplayer və ya Singleplayer olduğun deyir 
+
+ShowGameExtension
+ShowGameInfo()-Oyunun bütün propertilərini çap edir(Reflection)
+
+
+IAction
+İsFps-"Fps(First person shooter)-dir yoxsa Tps(Third person shooter)"
+
+IHorror
+MonsterName-(Oyunda qaçdığımız canavarın adı)
+
+
+IStrategy 
+MapName-"Oynadığımız dünyanın(xəritənin) adı"
+
+IRpg
+Level-"Karakterimizin levelin Göstərir"
+WantedLevel - "Oyunda istədiyimiz level"
+LeftLevel()-"İstədiyimiz səviyyəyə çatmağ üçün lazım olan level"
+
+Account
+Name
+E-Mail
+Password
+Cash-Hal hazırda nə qədər pulumuz var
+ShowInfo()-Accountun Məlumatların çap edir 
+
+Market(Class)
+AllGames -Game tipi bir array 
+AddGames(Game game)-AllGame - ə yaratdığımız oyunları əlavə edir
+BuyGame(Game game)-Bizim pulumuz Çatırsa alsın və library-ə qaytarsın çatmırsa desin ki pulun yoxdu
+
+
+
+Library(Class)
+Game tipi bir array olacağ aldığımız oyunlar ora gedəcək
+ShowAllGames()-Bütün oyunları çap edir 
+ShowSpecialTypeGames()-Məsələn horror tipində oyunlarımıza baxmağ istəyiriksə onu göstərir(Reflection))
+Library indexeri olacağ(Çünki Marketdən aldığımız oyunlar ora əlavə olunacağ)
+
+
+
+StrategyGame(Class) implement -IStrategy inherit -Game
+
+RpgGame(Class) implement IAction,IRpg inherit -Game
+
+ShooterGame(Class)-implement IAction inherit -Game
+
+HorrorGame(Class)-implement IHorror inherit-Game
+
+---------------------------------------------------------------------------------------Bu gün bura qədər yazacığ
+Steam menu-
+Program işə düşdüyündə Account yaradılır 
+1)1 -ci menyu 
+1-Oyun yarat
+2-Steam menyu
+0-Exit
+2)1-ə basdığda:
+1-create StrategyGame
+2-create RpgGame
+3-create ShooterGame
+4-create HorrorGame
+0-Exit
+3)2-yə basdığda 
+1)MyLibrary
+2)Market
+0)-Exit
+4)1-ə basdığda
+1-Show all games 
+2-Show spec type game(Məsələn horror tipində oyunlarımıza baxmağ istəyiriksə onu göstərir)
+0-exit
+2-ə basdığımızda
+1-ShooterGames-bütün ShooterGames ləri çapa versin
+2-RpgGame-bütün RpgGameləri çapa versin
+3-StrategyGame - bütün StrategyGame ləri çapa versin
+4-HorrorGame -bütün HorrorGame ləri çapa versin
+0-Exit
+
+
+
+
+
